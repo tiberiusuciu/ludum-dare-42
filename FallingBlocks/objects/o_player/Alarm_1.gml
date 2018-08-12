@@ -1,0 +1,1 @@
+has_picked_up_powerup = false;
