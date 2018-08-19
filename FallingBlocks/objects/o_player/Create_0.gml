@@ -7,6 +7,7 @@ is_hurting = false;
 remove_collisions = false;
 has_picked_up_powerup = false;
 has_landed = false;
+has_double_jumped = false;
 
 image_speed = 0;
 sprite_index = s_player;

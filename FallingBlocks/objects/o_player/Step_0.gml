@@ -2,7 +2,13 @@ var right = keyboard_check(ord("D")) || keyboard_check(vk_right);
 var left = keyboard_check(ord("A")) || keyboard_check(vk_left);
 var jump = keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("W")) || keyboard_check_pressed(vk_up);
 
-if (jump && vspd == 0) {
+if (jump && place_meeting(x, y + 1, o_solid) && has_double_jumped == false) {
+	vspd = jumpspd;
+	audio_play_sound(snd_jumping, 5, false);
+	has_landed = false;
+}
+else if (jump && has_double_jumped == false) {
+	has_double_jumped = true;
 	vspd = jumpspd;
 	audio_play_sound(snd_jumping, 5, false);
 	has_landed = false;
@@ -27,6 +33,7 @@ if (!remove_collisions) {
 		
 		if (!has_landed) {
 			has_landed = true;
+			has_double_jumped = false;
 			audio_sound_pitch(snd_landing, random_range(.9, 1.1));
 			audio_play_sound(snd_landing, 5, false);
 		}

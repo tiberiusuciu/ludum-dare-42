@@ -25,7 +25,7 @@ if (has_powerup) {
 }
 
 value = 0;
-color = irandom_range(0, 3);
+/* color = irandom_range(0, 3);
 
 if (color == 0) {
 	sprite_index = s_blue_block;
@@ -43,3 +43,4 @@ else if (color == 3) {
 	sprite_index = s_red_block;
 	value = 40;
 }
+*/
